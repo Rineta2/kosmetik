@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+$sec-f: 'Libre Baskerville', serif;
+$body-f: 'Roboto Condensed', sans-serif;
+
+$body-c: #F3F8FF;
+$sec-c: #FFB5DA;
+$title-c: #191825;
+$text-c: #000000;
+$white-c: #F1F1F1;
+
+$big-fs: 2.5rem;
+$h1-fs: 1.8rem;
+$med-fs: 1.3rem;
+$small-fs: 1rem;
+
+$hh: 3.5rem;
+
+$br-12: 12px;
+$br-6: 6px;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+html {
+  font-size: 80%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $body-c;
+  color: $text-c;
+  font-family: $body-f;
+}
+
+section {
+  padding: 7rem 2rem;
+
+  @media only screen and (max-width: 768px) {
+    padding: 4rem 2rem;
+  }
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+main {
+  overflow: hidden;
+  z-index: 999;
+}

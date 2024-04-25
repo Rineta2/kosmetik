@@ -1,0 +1,966 @@
+@import './Variable.scss';
+
+.home {
+  position: relative;
+  min-height: 100svh;
+
+  &__container {
+    padding: 1rem 5%;
+
+    @media only screen and (max-width: 768px) {
+      padding: 1rem 0;
+    }
+
+    .home__data {
+
+      @media only screen and (max-width: 468px) {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .left {
+        .text {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          width: 50%;
+          height: 100%;
+          top: 0;
+          left: 0;
+
+          @media only screen and (max-width: 468px) {
+            width: 100%;
+          }
+
+          h1 {
+            font-size: $big-fs;
+            color: $white-c;
+            font-family: $sec-f;
+            font-style: italic;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-shadow: 0 0 2px $white-c;
+
+            @media only screen and (max-width: 768px) {
+              font-size: $h1-fs;
+              color: $title-c;
+            }
+
+            @media only screen and (max-width: 468px) {
+              text-align: center;
+              margin-bottom: 1rem;
+            }
+          }
+        }
+
+        img {
+          position: absolute;
+          width: 50%;
+          height: 100%;
+          object-fit: cover;
+          top: 0;
+          left: 0;
+          opacity: .9;
+          z-index: -1;
+          pointer-events: none;
+
+          @media only screen and (max-width: 468px) {
+            width: 100%;
+            position: relative;
+            height: 50%;
+          }
+        }
+      }
+
+      .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        right: 0;
+        position: absolute;
+        width: 50%;
+        background-color: $sec-c;
+        top: 0;
+        min-height: 100svh;
+
+        @media only screen and (max-width: 468px) {
+          position: relative;
+          width: 100%;
+          min-height: 50svh;
+          border-radius: $br-12;
+        }
+
+        .home__title {
+          font-size: $h1-fs;
+          letter-spacing: 1px;
+          margin-bottom: 3rem;
+          color: $white-c;
+          font-weight: 600;
+        }
+
+        a {
+          font-size: $small-fs;
+          color: $title-c;
+          width: 150px;
+          height: 50px;
+          background-color: $white-c;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: $br-12;
+
+          @media only screen and (max-width: 468px) {
+            width: 120px;
+            height: 40px;
+            font-size: .813rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.populer {
+  .populer__container {
+    padding: 1rem 5%;
+
+    @media only screen and (max-width: 992px) {
+      padding: 1rem 0;
+    }
+
+    .populer__data {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-bottom: 2rem;
+
+      @media only screen and (max-width: 768px) {
+        grid-template-columns: repeat(1, 1fr);
+        place-items: center;
+      }
+
+      .text {
+        h1 {
+          font-size: $big-fs;
+          margin-bottom: 1rem;
+          font-family: $sec-f;
+          letter-spacing: 1px;
+          max-width: 80%;
+
+          @media only screen and (max-width: 992px) {
+            max-width: 100%;
+            font-size: $h1-fs;
+          }
+        }
+
+        p {
+          font-size: $small-fs;
+          font-weight: 400;
+          letter-spacing: .5px;
+        }
+      }
+
+      .content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        place-items: center;
+
+        @media only screen and (max-width: 768px) {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+        }
+
+        @media only screen and (max-width: 320px) {
+          grid-template-columns: repeat(1, 1fr);
+        }
+
+        .card {
+          display: flex;
+          flex-direction: column;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 3rem;
+
+          img {
+            width: 150px;
+            height: auto;
+            object-fit: cover;
+            border-radius: $br-6;
+            margin-bottom: 1rem;
+
+            @media only screen and (max-width: 468px) {
+              width: 100%;
+            }
+          }
+
+          span {
+            font-size: $small-fs;
+            font-weight: 400;
+            letter-spacing: .5px;
+            color: $title-c;
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    .button {
+      font-size: $small-fs;
+      letter-spacing: 1px;
+      background-color: $title-c;
+      width: 150px;
+      height: 40px;
+      margin: 0 auto;
+      border: none;
+      outline: none;
+      color: $white-c;
+      border-radius: $br-6;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.category {
+  .category__container {
+    padding: 1rem 5%;
+
+    @media only screen and (max-width: 992px) {
+      padding: 1rem 0;
+    }
+
+    .heading {
+      margin-bottom: 3rem;
+
+      h1 {
+        font-size: $big-fs;
+        letter-spacing: 1px;
+        font-family: $sec-f;
+        font-weight: 600;
+      }
+    }
+
+    .data {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      overflow: hidden;
+
+      @media only screen and (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media only screen and (max-width: 320px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .card {
+        position: relative;
+        cursor: pointer;
+
+        img {
+          width: 300px;
+          height: 300px;
+          object-fit: cover;
+          border-radius: $br-12;
+
+          @media only screen and (max-width: 768px) {
+            width: 100%;
+            height: 250px;
+          }
+
+          @media only screen and (max-width: 468px) {
+            width: 100%;
+            height: 200px;
+          }
+        }
+
+        .text {
+          position: absolute;
+          width: 300px;
+          height: 300px;
+          top: 0;
+          left: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-color: rgba(0, 0, 0, .5);
+          border-radius: $br-12;
+          transition: opacity .3s ease-in-out;
+          opacity: 0;
+
+          @media only screen and (max-width: 768px) {
+            width: 100%;
+            height: 250px;
+          }
+
+          @media only screen and (max-width: 468px) {
+            width: 100%;
+            height: 200px;
+          }
+
+          p {
+            font-size: $med-fs;
+            color: $white-c;
+            font-family: $sec-f;
+            letter-spacing: 1px;
+            font-weight: 600;
+
+            @media only screen and (max-width: 768px) {
+              text-align: center;
+              font-size: $small-fs;
+              max-width: 80%;
+              line-height: 1.7;
+            }
+          }
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.meet {
+  position: relative;
+
+  .meet__container {
+    padding: 1rem 5%;
+
+    @media only screen and (max-width: 992px) {
+      padding: 1rem 0;
+    }
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: -1;
+    }
+
+    .text {
+      width: 350px;
+      height: 300px;
+      background-color: $white-c;
+      padding: 1rem;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      border-radius: $br-12;
+
+      @media only screen and (max-width: 468px) {
+        width: 100%;
+        height: 100%;
+      }
+
+      h1 {
+        font-size: $med-fs;
+        letter-spacing: 1px;
+        font-weight: 600;
+        color: $title-c;
+        max-width: 80%;
+        line-height: 1.5;
+        font-family: $sec-f;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        margin-top: 1rem;
+
+        @media only screen and (max-width: 468px) {
+          font-size: $small-fs;
+        }
+      }
+
+      p {
+        font-size: $small-fs;
+        letter-spacing: .5px;
+        color: $text-c;
+        font-weight: 400;
+        line-height: 1.5;
+        max-width: 80%;
+        margin-bottom: 2rem;
+
+        @media only screen and (max-width: 468px) {
+          font-size: .813rem;
+          max-width: 100%;
+        }
+      }
+
+      button {
+        border: none;
+        outline: none;
+        background-color: $sec-c;
+        width: 130px;
+        cursor: pointer;
+        height: 40px;
+        color: $white-c;
+        border-radius: $br-6;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        font-size: $small-fs;
+      }
+    }
+
+    .model {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, .5);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: .3s ease-in-out;
+      z-index: 99999;
+
+      &.open {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      form {
+        background-color: $white-c;
+        padding: 1rem;
+        border-radius: $br-12;
+        width: 500px;
+        height: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 500px;
+
+        @media only screen and (max-width: 768px) {
+          width: 80%;
+          height: 90%;
+        }
+
+        @media only screen and (max-width: 468px) {
+          width: 90%;
+          height: 65%;
+        }
+
+        @media only screen and (max-width: 320px) {
+          width: 100%;
+          height: 100%;
+          border-radius: 0;
+        }
+
+        .box {
+          display: flex;
+          gap: .5rem;
+          margin-bottom: 1rem;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background-color: $title-c;
+          padding: .5rem;
+          border-radius: $br-6;
+
+          @media only screen and (max-width: 768px) {
+            justify-content: space-around;
+          }
+
+          @media only screen and (max-width: 468px) {
+            padding: .2rem;
+          }
+
+          label {
+            font-size: $small-fs;
+            letter-spacing: 1px;
+            color: $white-c;
+            font-weight: 600;
+            font-family: $sec-f;
+            display: flex;
+            gap: .5rem;
+            color: $white-c;
+          }
+
+          input {
+            border: none;
+            outline: none;
+            width: 300px;
+            height: 30px;
+            font-size: $small-fs;
+            letter-spacing: 1px;
+            color: $white-c;
+            font-weight: 500;
+            background-color: transparent;
+            border-bottom: 2px solid $body-c;
+            padding: .5rem;
+            margin-bottom: .5rem;
+            margin-top: .5rem;
+            text-transform: capitalize;
+
+            @media only screen and (max-width: 768px) {
+              width: 200px;
+            }
+
+            @media only screen and (max-width: 468px) {
+              width: 100px;
+            }
+          }
+
+          textarea {
+            border: none;
+            outline: none;
+            background-color: transparent;
+            border-bottom: 2px solid $body-c;
+            width: 300px;
+            height: 40px;
+            padding: .5rem;
+            font-size: $small-fs;
+            letter-spacing: 1px;
+            color: $white-c;
+            font-weight: 500;
+            resize: none;
+            margin-bottom: 1rem;
+
+            @media only screen and (max-width: 768px) {
+              width: 200px;
+            }
+
+            @media only screen and (max-width: 468px) {
+              width: 100px;
+            }
+          }
+        }
+
+        button {
+          border: none;
+          outline: none;
+          background-color: $sec-c;
+          width: 130px;
+          cursor: pointer;
+          height: 40px;
+          letter-spacing: 1px;
+          color: $white-c;
+          border-radius: $br-6;
+          margin: 0 auto;
+        }
+      }
+
+      .close {
+        position: absolute;
+        top: 2rem;
+        right: 3rem;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-color: $sec-c;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+
+        @media only screen and (max-width: 468px) {
+          right: 1rem;
+        }
+
+        @media only screen and (max-width: 320px) {
+          right: .5rem;
+          top: .3rem;
+        }
+
+        i {
+          color: $body-c;
+          font-size: $h1-fs;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+.gallery {
+  .gallery__container {
+    padding: 1rem 5%;
+
+    @media only screen and (max-width: 992px) {
+      padding: 1rem 0;
+    }
+
+    .heading {
+      margin-bottom: 3rem;
+
+      h1 {
+        font-size: $h1-fs;
+        font-family: $sec-f;
+        letter-spacing: 1px;
+        font-weight: 600;
+        color: $title-c;
+      }
+    }
+
+    .box__data {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+
+      @media only screen and (max-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media only screen and (max-width: 468px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .data {
+        cursor: pointer;
+        margin-bottom: 2rem;
+
+        img {
+          width: 100%;
+          height: 300px;
+          object-fit: cover;
+          border-radius: $br-12;
+
+          @media only screen and (max-width: 468px) {
+            height: 200px;
+          }
+        }
+      }
+    }
+
+    button {
+      border: none;
+      outline: none;
+      background-color: $sec-c;
+      width: 150px;
+      height: 40px;
+      cursor: pointer;
+      margin: 0 auto;
+      color: $white-c;
+      letter-spacing: 1px;
+      border-radius: $br-6;
+    }
+
+    .model {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, .9);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+
+      &.open {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .model__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $body-c;
+        border-radius: 12px;
+        padding: 1rem;
+        width: 50%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+
+        @media only screen and (max-width: 992px) {
+          width: 70%;
+        }
+
+        @media only screen and (max-width: 468px) {
+          width: 90%;
+        }
+
+        @media only screen and (max-width: 320px) {
+          width: 95%;
+          padding: .5rem;
+        }
+
+        img {
+          max-width: 100%;
+          height: 500px;
+          object-fit: cover;
+          object-position: center 5%;
+          border-radius: 6px;
+
+          @media only screen and (max-width: 992px) {
+            height: 400px;
+          }
+
+          @media only screen and (max-width: 468px) {
+            height: 300px;
+          }
+        }
+      }
+
+      .close {
+        position: absolute;
+        right: 3.5rem;
+        top: 3.5rem;
+        width: 35px;
+        height: 35px;
+        background-color: $sec-c;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        cursor: pointer;
+
+        @media only screen and (max-width: 468px) {
+          right: 1.5rem;
+        }
+
+        .icon {
+          font-size: $h1-fs;
+          color: $white-c;
+        }
+      }
+    }
+
+    p {
+      text-align: center;
+      color: $title-c;
+      letter-spacing: 1px;
+      font-weight: 600;
+      font-size: $med-fs;
+    }
+  }
+}
+
+.kontak {
+  position: relative;
+  min-height: 100vh;
+
+  .kontak__container {
+    padding: 1rem 5%;
+
+    @media only screen and (max-width: 992px) {
+      padding: 1rem 0;
+    }
+
+    .kontak__data {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+
+      @media only screen and (max-width: 468px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .left {
+        .text {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          width: 50%;
+          height: 100%;
+          top: 0;
+          left: 0;
+
+          @media only screen and (max-width: 468px) {
+            position: relative;
+            width: 100%;
+            height: 0;
+            text-align: center;
+            margin-bottom: 2rem;
+          }
+
+          h1 {
+            font-size: $big-fs;
+            letter-spacing: 1px;
+            font-weight: 600;
+            font-family: $sec-f;
+            color: $white-c;
+
+            @media only screen and (max-width: 992px) {
+              font-size: $h1-fs;
+            }
+
+            @media only screen and (max-width: 468px) {
+              color: $title-c;
+              margin-bottom: 2rem;
+
+            }
+
+          }
+        }
+
+        img {
+          position: absolute;
+          width: 50%;
+          height: 100%;
+          object-fit: cover;
+          background-size: cover;
+          background-repeat: no-repeat;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          opacity: .8;
+          pointer-events: none;
+
+          @media only screen and (max-width: 468px) {
+            position: relative;
+            width: 100%;
+            opacity: .7;
+            border-radius: $br-12;
+            height: 450px;
+          }
+
+          @media only screen and (max-width: 320px) {
+            height: 300px;
+            margin-bottom: 2rem;
+          }
+        }
+      }
+
+      .right {
+        width: 100%;
+        height: 100%;
+
+        .content__data {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          .kontak__title {
+            font-size: $big-fs;
+            text-align: center;
+            letter-spacing: 1px;
+            font-weight: 600;
+            font-family: $sec-f;
+            color: $title-c;
+            margin-bottom: 2rem;
+
+            @media only screen and (max-width: 992px) {
+              font-size: $h1-fs;
+            }
+          }
+
+          .box__contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+
+            h1 {
+              font-size: $h1-fs;
+              letter-spacing: 1px;
+              margin-bottom: 1rem;
+              font-weight: 400;
+              display: flex;
+              gap: .5rem;
+
+              @media only screen and (max-width: 992px) {
+                font-size: $med-fs;
+              }
+
+              i {
+                font-size: $h1-fs;
+                margin-top: .2rem;
+
+                @media only screen and (max-width: 992px) {
+                  font-size: $med-fs;
+                }
+              }
+            }
+
+            a {
+              color: $title-c;
+              margin-bottom: 1rem;
+              letter-spacing: 1px;
+              font-size: $med-fs;
+              display: flex;
+              gap: .2rem;
+              overflow: hidden;
+
+              @media only screen and (max-width: 992px) {
+                font-size: $small-fs;
+              }
+
+              i {
+                font-size: $med-fs;
+                margin-top: .15rem;
+                transition: transform .3s ease-in-out;
+
+                @media only screen and (max-width: 992px) {
+                  font-size: $small-fs;
+                }
+              }
+
+              &:hover {
+                i {
+                  transform: translate(3px, 0);
+                }
+              }
+            }
+          }
+
+          .social {
+            display: flex;
+            gap: 2rem;
+
+            @media only screen and (max-width: 992px) {
+              gap: 1.5rem;
+            }
+
+            a {
+              width: 50px;
+              height: 50px;
+              background-color: $title-c;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 50%;
+              transition: trafsorm .3s ease-in-out;
+              overflow: hidden;
+
+              @media only screen and (max-width: 992px) {
+                width: 40px;
+                height: 40px;
+              }
+
+              &:hover {
+                background-color: $sec-c;
+                transform: translate(0, -10px);
+              }
+
+              i {
+                color: $white-c;
+                font-size: $med-fs;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,638 @@
+@import './Variable.scss';
+
+.about {
+  min-height: 100vh;
+
+  .about__container {
+    padding: 1rem 5%;
+
+    @media only screen and (max-width: 992px) {
+      padding: 1rem 0;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+
+      .left {
+
+        img {
+          position: absolute;
+          width: 50%;
+          height: 100%;
+          object-fit: cover;
+          background-size: cover;
+          background-repeat: no-repeat;
+          object-position: center;
+          top: 0;
+          left: 0;
+        }
+      }
+
+      .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        right: 0;
+        position: absolute;
+        width: 50%;
+        top: 0;
+        min-height: 100svh;
+
+        h1 {
+          font-size: $h1-fs;
+          margin-bottom: 1rem;
+          letter-spacing: 1px;
+          font-family: $sec-f;
+          font-weight: 600;
+
+          @media only screen and (max-width: 768px) {
+            max-width: 90%;
+            margin-bottom: 2rem;
+          }
+
+          @media only screen and (max-width: 320px) {
+            font-size: $med-fs;
+          }
+        }
+
+        p {
+          font-size: $small-fs;
+          letter-spacing: .5px;
+          max-width: 90%;
+          line-height: 1.5;
+
+          @media only screen and (max-width: 768px) {
+            max-width: 80%;
+          }
+
+          @media only screen and (max-width: 320px) {
+            font-size: .813rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.quetes {
+  .quetes__container {
+    padding: 1rem 5%;
+
+    @media only screen and (max-width: 992px) {
+      padding: 1rem 0;
+    }
+
+    .card {
+      width: 100%;
+      height: 250px;
+      background-color: $title-c;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      border-radius: $br-12;
+
+      @media only screen and (max-width: 992px) {
+        padding: 1rem 5%;
+      }
+
+      h3 {
+        font-size: $med-fs;
+        color: $white-c;
+        margin-bottom: 3rem;
+        text-align: center;
+
+        @media only screen and (max-width: 992px) {
+          text-align: center;
+        }
+
+        @media only screen and (max-width: 468px) {
+          font-size: $small-fs;
+        }
+      }
+
+      span {
+        font-size: $med-fs;
+        color: $white-c;
+        font-family: $sec-f;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
+
+.product {
+  .product__container {
+    padding: 1rem 5%;
+
+    @media only screen and (max-width: 992px) {
+      padding: 1rem 0;
+    }
+
+    .heading {
+      text-align: center;
+      margin-bottom: 3rem;
+
+      h1 {
+        font-size: $h1-fs;
+        letter-spacing: 1px;
+        font-weight: 600;
+        font-family: $sec-f;
+        color: $title-c;
+      }
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+
+      @media only screen and (max-width: 992px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      @media only screen and (max-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media only screen and (max-width: 468px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media only screen and (max-width: 320px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .card {
+        flex-direction: column;
+        margin-bottom: 3rem;
+        width: 100%;
+        height: 360px;
+        background-color: $white-c;
+        border-radius: $br-6;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform .3s ease-in-out;
+
+        .fadeIn {
+          opacity: 0;
+          transition: opacity 0.3s ease-in-out;
+
+          &.loaded {
+            opacity: 1;
+          }
+        }
+
+        &:hover {
+          transform: scale(1.1);
+          box-shadow: 0 0 10px $title-c;
+        }
+
+        img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          margin-bottom: 1.5rem;
+        }
+
+        .text {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 1rem;
+
+          b {
+            font-size: $med-fs;
+          }
+
+          span {
+            font-size: $small-fs;
+            font-weight: 400;
+          }
+
+          button {
+            font-size: $small-fs;
+            padding: .5rem;
+            width: 100px;
+            border: none;
+            outline: none;
+            border-radius: $br-6;
+          }
+        }
+      }
+    }
+
+    .filter__button {
+      display: flex;
+      gap: 2rem;
+
+      @media only screen and (min-width: 1200px) {
+        margin: 0 auto;
+      }
+
+
+      @media only screen and (max-width: 468px) {
+        gap: 2rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      button {
+        font-size: $small-fs;
+        padding: .8rem 1rem;
+        border-radius: $br-6;
+        border: none;
+        cursor: pointer;
+        background-color: $sec-c;
+        color: $white-c;
+        transition: background-color .3s ease-in-out;
+
+        @media only screen and (max-width: 468px) {
+          padding: .5rem;
+          font-size: .813rem;
+          width: 100%;
+        }
+
+        &.active {
+          background-color: $title-c;
+          color: $white-c;
+        }
+      }
+    }
+
+    p {
+      text-align: center;
+      font-size: $med-fs;
+      letter-spacing: 1px;
+      font-weight: 400;
+    }
+
+    button {
+      border: none;
+      background-color: $title-c;
+      width: 150px;
+      height: 40px;
+      margin: 0 auto;
+      color: $white-c;
+      border-radius: $br-6;
+      font-size: $small-fs;
+      letter-spacing: .3px;
+      cursor: pointer;
+    }
+
+    .model {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, .5);
+      opacity: 0;
+      visibility: hidden;
+      overflow: hidden;
+      transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+      z-index: 9999;
+
+      &.open {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .box__model {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 12px;
+        padding: 1rem;
+        width: 400px;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: $white-c;
+        position: relative;
+
+        @media only screen and (max-width: 468px) {
+          width: 300px;
+          height: 300px;
+        }
+
+        img {
+          width: 100%;
+          height: 250px;
+          object-fit: cover;
+          object-position: center 3%;
+          margin-bottom: 2rem;
+          border-radius: $br-6;
+
+          @media only screen and (max-width: 468px) {
+            height: 150px;
+          }
+        }
+
+        .product__info {
+          h2 {
+            font-size: $small-fs;
+            color: $title-c;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+          }
+
+          p {
+            font-size: $med-fs;
+            margin-bottom: 1rem;
+            color: $title-c;
+            font-weight: 800;
+          }
+
+          a {
+            color: $white-c;
+            width: 100px;
+            height: 40px;
+            background-color: $title-c;
+            border-radius: $br-6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            font-size: $small-fs;
+            letter-spacing: 1px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+.payment {
+
+  .payment__container {
+    padding: 1rem 5%;
+
+    @media only screen and (max-width: 992px) {
+      padding: 1rem 0;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+
+      @media only screen and (max-width: 468px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .payment__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 3rem;
+
+        .heading {
+          text-align: center;
+          margin-bottom: 2rem;
+
+          h1 {
+            font-size: $h1-fs;
+            color: $title-c;
+            font-family: $sec-f;
+            font-weight: 600;
+            letter-spacing: 1px;
+          }
+        }
+
+        .box {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 2rem;
+
+          .card {
+            width: 100%;
+
+            img {
+              width: 100%;
+              height: auto;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+
+      .pengiriman__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .heading {
+          text-align: center;
+          margin-bottom: 2rem;
+
+          h1 {
+            font-size: $h1-fs;
+            color: $title-c;
+            font-family: $sec-f;
+            font-weight: 600;
+            letter-spacing: 1px;
+          }
+        }
+
+        .box {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 2rem;
+
+          .card {
+            width: 100%;
+
+            img {
+              width: 100%;
+              height: auto;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.checkout {
+  min-height: 100vh;
+  position: relative;
+
+  &__container {
+    padding: 1rem 5%;
+
+    .box__checkout {
+
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background-size: cover;
+        object-fit: cover;
+        object-position: center 5%;
+      }
+
+      .form__content {
+        width: 100%;
+        height: 600px;
+        background-color: rgba(0, 0, 0, .25);
+        margin: 0 auto;
+        border-radius: $br-6;
+        backdrop-filter: blur(5px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @media only screen and (max-width: 992px) {
+          height: 100%;
+        }
+
+        form {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          place-items: center;
+          column-gap: 5rem;
+
+          @media only screen and (max-width: 468px) {
+            display: flex;
+            flex-wrap: wrap;
+          }
+
+          .box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            width: 100%;
+
+            label {
+              font-size: $med-fs;
+              color: $white-c;
+              margin-bottom: 1rem;
+              font-weight: 600;
+              letter-spacing: 1px;
+              text-transform: uppercase;
+              margin-top: 1rem;
+            }
+
+            input {
+              width: 350px;
+              height: 40px;
+              background-color: $white-c;
+              border-radius: $br-6;
+              padding: 0 1rem;
+              font-size: $med-fs;
+              letter-spacing: 1px;
+              color: $title-c;
+              font-weight: 600;
+              margin-bottom: 1rem;
+              border: none;
+              outline: none;
+
+              @media only screen and (max-width: 992px) {
+                width: 100%;
+              }
+
+              @media only screen and (max-width: 768px) {
+                width: 280px;
+              }
+
+              @media only screen and (max-width: 468px) {
+                width: 200px;
+              }
+            }
+
+            textarea {
+              width: 350px;
+              height: 80px;
+              background-color: $white-c;
+              border-radius: $br-6;
+              font-size: $med-fs;
+              letter-spacing: 1px;
+              color: $title-c;
+              padding: .2rem;
+              margin-bottom: 1rem;
+              border: none;
+              outline: none;
+              resize: none;
+
+              @media only screen and (max-width: 992px) {
+                width: 100%;
+              }
+
+              @media only screen and (max-width: 768px) {
+                width: 280px;
+              }
+
+              @media only screen and (max-width: 468px) {
+                width: 200px;
+              }
+            }
+
+            select {
+              width: 350px;
+              height: 40px;
+              background-color: $white-c;
+              border-radius: $br-6;
+              font-size: $med-fs;
+              letter-spacing: 1px;
+              color: $title-c;
+              padding: 0 1rem;
+              margin-bottom: 1rem;
+              border: none;
+              outline: none;
+
+              @media only screen and (max-width: 768px) {
+                width: 280px;
+              }
+
+              @media only screen and (max-width: 468px) {
+                width: 200px;
+              }
+            }
+          }
+
+          button {
+            width: 350px;
+            height: 50px;
+            background-color: $title-c;
+            border-radius: $br-6;
+            font-size: $med-fs;
+            color: $white-c;
+            cursor: pointer;
+            margin-bottom: 1rem;
+
+            @media only screen and (max-width: 768px) {
+              width: 250px;
+            }
+
+            @media only screen and (max-width: 468px) {
+              width: 150px;
+              margin: 0 auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}

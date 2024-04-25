@@ -1,0 +1,261 @@
+@import './Variable.scss';
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background-color: transparent;
+  transition: .3s ease-in-out;
+  overflow: hidden;
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: calc($hh + 1.5rem);
+    padding: 1rem 7%;
+
+    .nav__list {
+      display: flex;
+      justify-content: center;
+      column-gap: 4rem;
+
+      @media only screen and (max-width: 468px) {
+        position: fixed;
+        bottom: 30px;
+        left: 0;
+        background-color: $white-c;
+        height: $hh;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 2rem;
+        z-index: 100;
+        right: 0;
+        width: 80%;
+        margin: 0 auto;
+        border-radius: $br-12;
+
+        @media only screen and (max-width: 320px) {
+          padding: 1rem;
+          width: 90%;
+        }
+
+        &.hide {
+          display: none;
+        }
+      }
+
+      @media only screen and (max-width: 768px) {
+        column-gap: 3rem;
+      }
+
+      @media only screen and (max-width: 468px) {
+        column-gap: 2rem;
+      }
+
+      .nav__item {
+        .nav__link {
+          color: $title-c;
+
+          &.active {
+            color: $sec-c;
+          }
+
+          .nav__icons {
+            display: none;
+
+            @media only screen and (max-width: 468px) {
+              display: block;
+              font-size: $med-fs;
+              cursor: pointer;
+            }
+          }
+
+          .nav__name {
+            font-size: $small-fs;
+
+            @media only screen and (max-width: 468px) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    .logo {
+      h1 {
+        font-size: $h1-fs;
+        font-family: $sec-f;
+        letter-spacing: 1px;
+        font-weight: 600;
+        color: $title-c;
+      }
+    }
+
+    .info {
+      .menu {
+        font-size: $med-fs;
+        color: $title-c;
+        cursor: pointer;
+        z-index: 999;
+      }
+    }
+  }
+
+  &.fixed {
+    background-color: $body-c;
+  }
+}
+
+.box__info {
+  position: fixed;
+  top: 70px;
+  right: 50px;
+  width: 450px;
+  height: 450px;
+  background-color: $body-c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: .3s ease-in-out;
+  overflow: hidden;
+  visibility: hidden;
+  border-radius: $br-12;
+  z-index: 10;
+
+  @media only screen and (max-width: 992px) {
+    right: 30px;
+  }
+
+  @media only screen and (max-width: 468px) {
+    width: 100%;
+    right: 0;
+    top: 50px;
+  }
+
+  @media only screen and (max-width: 320px) {
+    width: 100%;
+    right: 0;
+  }
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .content__info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      row-gap: 1rem;
+
+      .title {
+        color: $title-c;
+        font-size: $med-fs;
+      }
+
+      .social {
+        display: flex;
+        column-gap: 2rem;
+
+        .call {
+          display: flex;
+          align-items: center;
+          width: 180px;
+          justify-content: center;
+          padding: 1rem;
+          background-color: $title-c;
+          border-radius: $br-6;
+          gap: .5rem;
+
+          @media only screen and (max-width: 768px) {
+            width: 140px;
+          }
+
+          .icons {
+            font-size: $small-fs;
+            color: $white-c;
+          }
+
+          span {
+            color: $white-c;
+            font-size: $small-fs;
+          }
+        }
+
+        .email {
+          display: flex;
+          align-items: center;
+          width: 180px;
+          height: 50px;
+          justify-content: center;
+          background-color: $title-c;
+          border-radius: $br-6;
+          gap: .5rem;
+
+          @media only screen and (max-width: 768px) {
+            width: 140px;
+          }
+
+          .icons {
+            font-size: $med-fs;
+            color: $white-c;
+          }
+
+          span {
+            color: $white-c;
+            font-size: $small-fs;
+          }
+        }
+      }
+    }
+
+    .maps {
+      display: flex;
+      gap: 1rem;
+      flex-direction: column;
+
+      h1 {
+        color: $title-c;
+        text-align: center;
+        font-size: $med-fs;
+      }
+
+      iframe {
+        border-radius: $br-6;
+        width: 350px;
+        height: 250px;
+        border: 0;
+
+        @media only screen and (max-width: 468px) {
+          width: 100%;
+        }
+      }
+    }
+
+    .close {
+      position: absolute;
+      top: -15px;
+      right: 0;
+      cursor: pointer;
+
+      .close__icons {
+        font-size: $h1-fs;
+        color: $title-c;
+      }
+    }
+  }
+}
